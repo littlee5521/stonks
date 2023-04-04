@@ -1,6 +1,7 @@
 .navbar{
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin: auto;
 }
 
 .navbar__section{
@@ -12,6 +13,7 @@
 .navbar__logo{
   font-size: 2.5dvw;
   color: whitesmoke;
+  margin-left: 5%;
 }
 
 .navbar__linebreak{

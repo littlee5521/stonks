@@ -1,8 +1,9 @@
 body{
-  background-color: yellow;
+  background-color: #0f1923;
 }
 
 .home-container{
-  background-color: #0f1923;
   min-height: 100dvh;
+  max-width: 1700px;
+  margin: auto;
 }
