@@ -1,0 +1,16 @@
+body{
+   background-color: #323232;
+}
+.header-title{
+  color: #b1b1b1;
+}
+.body-text{
+  color: #ffffff;
+}
+
+.header-font-size{
+  font-size: 1.3dvw;
+}
+.body-font-size{
+  font-size: 0.6dvw;
+}

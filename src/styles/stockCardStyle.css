@@ -1,0 +1,26 @@
+.stock-card{
+  padding: 20px;
+}
+
+.stock-card__buttons{
+  background-color: inherit;
+  color: white;
+}
+
+
+.stock-card__logo{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  padding-bottom: 5%;
+}
+.stock-card__prices{
+  width: fit-content;
+  margin: auto;
+  padding-bottom: 2%;
+}
+
+.stock-card__info{
+  text-align: center;
+  padding-bottom: 2%;
+}
