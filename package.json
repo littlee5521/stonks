@@ -10,6 +10,10 @@
     "@types/node": "^16.18.23",
     "@types/react": "^18.0.32",
     "@types/react-dom": "^18.0.11",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -20,7 +24,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start:backend": "nodemon index.js"
   },
   "eslintConfig": {
     "extends": [

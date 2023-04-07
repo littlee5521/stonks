@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { useEffect } from "react";
 import { fetchStock } from "../script/stockFetch";
 import '../styles/stockCardStyle.css'
 import '../styles/globalStyle.css'
@@ -11,27 +12,31 @@ export function StockCard(props: props) {
   const [stockAskPrice, setStockAskPrice] = useState(0)
   const [stockSector, setStockSector] = useState('Temp')
   const [stockSecurity, setStockSecurity] = useState('Temp')
-  fetchStock(props.companyTicker).then(x => {
-    const stockObject = x[0]
-    setStockTicker(stockObject.symbol)
-    setStockLastSale(stockObject.lastSalePrice)
-    setStockBidPrice(stockObject.bidPrice)
-    setStockAskPrice(stockObject.askPrice)
-    setStockSector(stockObject.sector)
-    setStockSecurity(stockObject.securityType)
-  })
+  useEffect(() => {
+    fetchStock(props.companyTicker).then(x => {
+      const stockObject = x[0]
+      setStockTicker(stockObject.symbol)
+      setStockLastSale(stockObject.lastSalePrice)
+      setStockBidPrice(stockObject.bidPrice)
+      setStockAskPrice(stockObject.askPrice)
+      setStockSector(stockObject.sector)
+      setStockSecurity(stockObject.securityType)
+    })
+    setInterval(() => {
+      fetchStock(props.companyTicker).then(x => {
+        const stockObject = x[0]
+        setStockLastSale(stockObject.lastSalePrice)
+        setStockBidPrice(stockObject.bidPrice)
+        setStockAskPrice(stockObject.askPrice)
+      })
+    }, 5000);
+  }, [])
 
-  /*   setInterval(() => {
-   fetchStock(props.companyTicker).then(x => {
-     const stockObject = x[0]
-     setStockLastSale(stockObject.lastSalePrice)
-   })
- }, 200000000);
-*/
+
   return (
     <section className="stock-card">
       <article className="stock-card__logo header-title header-font-size">
-        <h2 className="stock-card__header">MicroSoft</h2>
+        <h2 className="stock-card__header">{props.companyName}</h2>
         <h2 className="stock-card__header">{stockTicker}</h2>
       </article>
       <article className="stock-card__prices">
@@ -49,4 +54,5 @@ export function StockCard(props: props) {
 
 interface props {
   companyTicker: string
+  companyName: string
 }
