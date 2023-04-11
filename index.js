@@ -8,7 +8,7 @@ app.use(cors())
 
 
 app.listen(8000, () => {
-  console.log('the port is running on' + PORT)
+  console.log('the port is running on ' + PORT)
 })
 
 app.get('/', (req, res) => {
@@ -17,12 +17,25 @@ app.get('/', (req, res) => {
   console.log(process.env.REACT_STOCK_API)
 })
 
+app.get('/newsFeed', (req, res) => {
+  //please dont look at this mess
+  // promises.......
+  (() => {
+    fetch(`https://stocknewsapi.com/api/v1?tickers-only=${req.query.companyName}&items=3&page=1&token=${process.env.REACT_APP_NEWS_API}`).then((x) => {
+      x.json().then((y) => {
+        res.json(y)
+      })
+    })
+
+  })()
+})
+
 app.get('/stockInfo', (req, res) => {
   (() => {
     fetch(`https://api.iex.cloud/v1/data/CORE/IEX_TOPS/${req.query.companyName}?token=${process.env.REACT_APP_STOCK_API}`).then((info) => {
-      console.log(info)
-      let infoClean = info.json()
-      res.json(infoClean)
+      info.json().then((temp) => {
+        res.json(temp)
+      })
     })
 
   })()

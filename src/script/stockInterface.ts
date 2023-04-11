@@ -1,3 +1,5 @@
+//this interface describes the data recived from IEX TOPS endpoint
+
 export interface stockJson {
   askPrice: number
   askSize: number
