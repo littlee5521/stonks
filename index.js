@@ -40,3 +40,22 @@ app.get('/stockInfo', (req, res) => {
 
   })()
 })
+
+app.get('/stockAutocomplete', (req, res) => {
+  (() => {
+    fetch(`https://cloud.iexapis.com/stable/search/${req.query.companyName}?token=${process.env.REACT_APP_STOCK_API}`).then((info) => {
+      info.json().then((temp) => {
+        //returns only stocks located in the us
+        let clean = []
+        temp.forEach(element => {
+
+          if (element.region == 'US') {
+            clean.push(element)
+          }
+        });
+        res.json(clean)
+      })
+    })
+
+  })()
+})
