@@ -7,14 +7,15 @@ import '../styles/globalStyle.css'
 
 export function StockCard(props: props) {
 
-  //state is not needed for some of this information as is not 
-  //dynamic
   const [stockTicker, setStockTicker] = useState('Temp')
   const [stockLastSale, setStockLastSale] = useState(0)
   const [stockBidPrice, setStockBidPrice] = useState(0)
   const [stockAskPrice, setStockAskPrice] = useState(0)
   const [stockSector, setStockSector] = useState('Temp')
   const [stockSecurity, setStockSecurity] = useState('Temp')
+
+  //this is so to many request are sent, its flawed as theres a batch of request being sent at once, should be broken up somehow
+  const rate = props.numberofCompanies * 1000
 
   //fetch request to grab information about a stock, when the market is closed
   //the json returned is empty, another api call should be used for data
@@ -38,7 +39,7 @@ export function StockCard(props: props) {
         setStockBidPrice(stockObject.bidPrice)
         setStockAskPrice(stockObject.askPrice)
       })
-    }, 5000);
+    }, rate);
   }, [])
 
 
@@ -64,4 +65,5 @@ export function StockCard(props: props) {
 interface props {
   companyTicker: string
   companyName: string
+  numberofCompanies: number
 }

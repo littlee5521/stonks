@@ -1,0 +1,10 @@
+.search-bar{
+  display: grid;
+  justify-items: right;
+}
+
+.search-bar__input{
+  height: 20px;
+ margin-top: auto; 
+ margin-bottom: auto;
+}

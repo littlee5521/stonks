@@ -11,8 +11,8 @@ function Navbar() {
     <nav className="navbar">
       <section className="navbar__section">
         <h1 className="navbar__logo header-title">Eazy Stocks </h1>
-        <SearcBar />
       </section>
+      <SearcBar />
       <div className="navbar__linebreak" />
     </nav>
   )
