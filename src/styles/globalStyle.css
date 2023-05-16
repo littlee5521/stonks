@@ -1,11 +1,11 @@
 body{
-   background-color: #323232;
+   background-color: #f7f7f7;
 }
 .header-title{
-  color: #b1b1b1;
+  color: #171717;
 }
 .body-text{
-  color: #ffffff;
+  color: #171717;
 }
 
 .header-font-size{
@@ -13,4 +13,8 @@ body{
 }
 .body-font-size{
 font-size: clamp(0.5rem, 6vw, 1.3rem);
+}
+
+.buttonStonk{
+  border-radius: 20px;
 }

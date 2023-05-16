@@ -15,9 +15,11 @@ function App() {
       {/* this area holds four cards that are preselected they are meant
         to be popular ones that are well known to grab attention*/}
       <div className='home-container__cards'>
-        <StockCard companyName='MicroSoft' companyTicker='MSFT' numberofCompanies={1} />
+        <StockCard companyName='MicroSoft' companyTicker='MSFT' numberofCompanies={4} />
+        <StockCard companyName='Apple' companyTicker='AAPL' numberofCompanies={4} />
+        <StockCard companyName='American Airlines' companyTicker='AAL' numberofCompanies={4} />
+        <StockCard companyName='Disney' companyTicker='DIS' numberofCompanies={4} />
       </div>
-      <NewsCard stockName='AAPL' />
     </main>
   );
 }

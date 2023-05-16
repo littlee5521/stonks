@@ -1,9 +1,10 @@
 .stock-card{
   padding: 20px;
+  background-color: #ededed;
 }
 
 .stock-card__buttons{
-  background-color: inherit;
+  background-color: #5f5f5d; 
   color: white;
 }
 
