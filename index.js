@@ -13,8 +13,6 @@ app.listen(8000, () => {
 
 app.get('/', (req, res) => {
   res.json('hi')
-  console.log(req.query.hello)
-  console.log(process.env.REACT_STOCK_API)
 })
 
 app.get('/newsFeed', (req, res) => {

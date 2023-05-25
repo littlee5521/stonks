@@ -47,7 +47,7 @@ export function StockCard(props: props) {
     <section className="stock-card">
       <article className="stock-card__logo header-title header-font-size">
         <h2 className="stock-card__header">{props.companyName}</h2>
-        <h2 className="stock-card__header">{stockTicker}</h2>
+        <h2 className="stock-card__header stock-card__token">{stockTicker}</h2>
       </article>
       <article className="stock-card__prices">
         <button className="stock-card__buttons body-font-size">{stockLastSale}</button>
